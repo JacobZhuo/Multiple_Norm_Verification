@@ -83,11 +83,11 @@ def calc_radius(clean_data,m_radius,norm,m_type, model,fix0=None):
 in_min, in_max = 0, 1
 m_radius = 0.5
 norm = -1 # Support 0, 1, 2, -1 (infty)
-varepsion = None # None for single objective optimization, Integer for l_0-l_p optimization
+varepsilon = None # None for single objective optimization, Integer for l_0-l_p optimization
 m_type = 'svm' # Support 'svm', 'dnn', 'dnnibp', 'dnndistill', 'ae', 'pca'
 
 model, clean_data = model_data.get_dm_SP(m_type)
 # model, clean_data = model_data.get_dm_TEP(m_type)
 in_shape = 27 # 50 for TEP
 
-h = calc_radius(clean_data, m_radius, norm, m_type, model, fix0=varepsion)
+h = calc_radius(clean_data, m_radius, norm, m_type, model, fix0=varepsilon)
