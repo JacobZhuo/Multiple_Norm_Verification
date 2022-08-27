@@ -33,3 +33,10 @@ adjustable parameters:
 
 ## Code Reference
 Part of our implementation refers to the codes from https://github.com/AI-secure/VeriGauge
+
+## Package Requirement
++ torch
++ cvxpy
++ numpy
++ gurobipy (and gurobi solver)
++ dccp
