@@ -13,7 +13,7 @@ The models are trained based on pytorch and the programmings are solved by Gurob
 run `main.py` to perform the multiple norm formal verification based on mathematical programmings.
 adjustable parameters:
 + *norm* support 0, 1, 2, and -1, where -1 for the $l_\infty$ nrom
-+ *varepsion* if None for the single objective optimization, if integer (>0) for $l_0$-$l_p$ optimization with $\varepsion$-constraint.
++ *varepsilon* if None for the single objective optimization, if integer (>0) for $l_0$-$l_p$ optimization with $\varepsilon$-constraint.
 + *m_type* for different verified FDC models
 + *model_data.get_dm_SP* or *model_data.get_dm_TEP* for two datasets.
 
@@ -32,3 +32,4 @@ adjustable parameters:
 `intervalbound.py` IBP algorithm to compute the bounds per layer.
 
 ## Code Reference
+Part of our implementation refers to the codes from https://github.com/AI-secure/VeriGauge
