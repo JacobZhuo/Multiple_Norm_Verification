@@ -6,22 +6,29 @@ This repository contains the implementations of all adversarial attack and defen
 
 We also released the trained model checkpoints and calculated adversarial samples.
 
+The models are trained based on pytorch and the programmings are solved by Gurobi.
+
 ## Repository Structure
-`attack/` contains the implementations of adversarial attack methods
+### Run
+run `main.py` to perform the multiple norm formal verification based on mathematical programmings.
+adjustable parameters:
++ *norm* support 0, 1, 2, and -1, where -1 for the $l_\infty$ nrom
++ *varepsion* if None for the single objective optimization, if integer (>0) for $l_0$-$l_p$ optimization with $\varepsion$-constraint.
++ *m_type* for different verified FDC models
++ *model_data.get_dm_SP* or *model_data.get_dm_TEP* for two datasets.
 
-`defense/` contains the implementations of adversarial defense methods
+### Model and data
+`TE/` `TEdataset.py` contain the Teennessee Eastman Process data files and preprocess files.
 
-`data/` contains the original TEP data with the normal condition and first 15 faults
+`SPdataset.NNA` `SPdataset.py` contains the Steel Plate data files and preprocess files.
 
-`models/` contains the the trained model checkpoints of defense methods and calculated adversarial samples of attack methods
+`TEP_models/` `SP_models/`contain the model checkpoints we used in the paper
 
-`TEP/` for fault classification
+`model_data.py` the files to load the pretrained models and clean samples for verifcaiton
 
-`TEP_FD/` for fault detection
+### Verfication
+`milp.py` main file to construct the mathematical programmings.
 
-## Run
-Run `main.py` can iteratively train the defensive models and calculate adversarial samples, to reproduce the main results of benchmark in the paper.
-
-Configure variable `dataset_name` to adjust the task (faule classification or detection).
+`intervalbound.py` IBP algorithm to compute the bounds per layer.
 
 ## Code Reference
