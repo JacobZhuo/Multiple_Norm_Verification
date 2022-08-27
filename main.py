@@ -45,7 +45,7 @@ def calc_radius(clean_data,m_radius,norm,m_type, model,fix0=None):
         print('data:#%d'%i)
 
         if m_type in ['dnn','ae','dnnibp','dnndistill']:
-            bound.construct(prebound.l, prebound.u, x, m_radius, norm, fix0 ,provar = pv)
+            bound.construct(prebound.l, prebound.u, x, m_radius, norm, fix0 )
             bound.prepare_verify(y)
         else:
             bound.construct(x, m_radius, norm, fix0)
